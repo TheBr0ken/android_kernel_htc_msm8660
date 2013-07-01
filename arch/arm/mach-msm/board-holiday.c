@@ -2212,20 +2212,20 @@ static void __init msm8x60_init_dsps(void)
 #endif /* CONFIG_MSM_DSPS */
 
 #ifdef CONFIG_FB_MSM_TRIPLE_BUFFER
-#define MSM_FB_PRIM_BUF_SIZE (roundup((960 * 540 * 4), 4096) * 3) /* 4 bpp x 3 pages */
+#define MSM_FB_PRIM_BUF_SIZE 0x5F1000 /* 4 bpp x 3 pages */
 #else
 #define MSM_FB_PRIM_BUF_SIZE (roundup((960 * 540 * 4), 4096) * 2) /* 4 bpp x 3 pages */
 #endif
 
 #ifdef CONFIG_FB_MSM_HDMI_MSM_PANEL
-#define MSM_FB_EXT_BUF_SIZE  (roundup((1920 * 1080 * 2), 4096) * 1) /* 2 bpp x 1 page */
+#define MSM_FB_EXT_BUF_SIZE  0x3F5000 /* 2 bpp x 1 page */
 #else
 #define MSM_FB_EXT_BUFT_SIZE    0
 #endif
 
 #ifdef CONFIG_FB_MSM_OVERLAY_WRITEBACK
 /* width x height x 3 bpp x 2 frame buffer */
-#define MSM_FB_WRITEBACK_SIZE roundup(960 * ALIGN(540, 32) * 3 * 2, 4096)
+#define MSM_FB_WRITEBACK_SIZE 0x2FD000
 #define MSM_FB_WRITEBACK_OFFSET 0
 #else
 #define MSM_FB_WRITEBACK_SIZE   0
@@ -2233,7 +2233,7 @@ static void __init msm8x60_init_dsps(void)
 #endif
 
 /* Note: must be multiple of 4096 */
-#define MSM_FB_SIZE roundup(MSM_FB_PRIM_BUF_SIZE + MSM_FB_EXT_BUF_SIZE, 4096)
+#define MSM_FB_SIZE 0x9E6000
 
 #define MSM_PMEM_SF_SIZE			0x2000000 /* 32 Mbytes */
 #define MSM_PMEM_ADSP_SIZE			0x2700000
@@ -2241,12 +2241,12 @@ static void __init msm8x60_init_dsps(void)
 #define MSM_PMEM_AUDIO_SIZE			0x239000
 #define MSM_PMEM_TZCOM_SIZE			0xC7000
 #define MSM_PMEM_SF_BASE			(0x40400000)
-#define MSM_PMEM_ADSP2_BASE			(0x80000000 - MSM_PMEM_ADSP2_SIZE)
-#define MSM_PMEM_ADSP_BASE			(MSM_PMEM_ADSP2_BASE - MSM_PMEM_ADSP_SIZE)
-#define MSM_PMEM_TZCOM_BASE			(MSM_PMEM_SF_BASE + MSM_PMEM_SF_SIZE)
-#define MSM_FB_WRITEBACK_BASE			(MSM_PMEM_TZCOM_BASE + MSM_PMEM_TZCOM_SIZE)
-#define MSM_FB_BASE				(MSM_FB_WRITEBACK_BASE + MSM_FB_WRITEBACK_SIZE)
-#define MSM_PMEM_AUDIO_BASE			(MSM_FB_BASE + MSM_FB_SIZE)
+#define MSM_PMEM_ADSP2_BASE			0x7F800000
+#define MSM_PMEM_ADSP_BASE			0x7D100000
+#define MSM_PMEM_TZCOM_BASE			0x42400000
+#define MSM_FB_WRITEBACK_BASE			0x424C7000
+#define MSM_FB_BASE				0x427C4000
+#define MSM_PMEM_AUDIO_BASE			0x431AA000
 #define MSM_SMI_BASE				0x38000000
 #define MSM_SMI_SIZE				0x4000000
 #define KERNEL_SMI_BASE			 	(MSM_SMI_BASE)
