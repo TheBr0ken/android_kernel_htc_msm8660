@@ -2235,7 +2235,7 @@ static void __init msm8x60_init_dsps(void)
 /* Note: must be multiple of 4096 */
 #define MSM_FB_SIZE 0x9E6000
 
-#define MSM_PMEM_SF_SIZE			0x2000000 /* 32 Mbytes */
+#define MSM_PMEM_SF_SIZE			0x3A00000 /* 32 Mbytes */
 #define MSM_PMEM_ADSP_SIZE			0x2700000
 #define MSM_PMEM_ADSP2_SIZE			0x800000 /* 1152 * 1920 * 1.5 * 2 */
 #define MSM_PMEM_AUDIO_SIZE			0x239000
@@ -2243,10 +2243,10 @@ static void __init msm8x60_init_dsps(void)
 #define MSM_PMEM_SF_BASE			(0x40400000)
 #define MSM_PMEM_ADSP2_BASE			0x7F800000
 #define MSM_PMEM_ADSP_BASE			0x7D100000
-#define MSM_PMEM_TZCOM_BASE			0x42400000
-#define MSM_FB_WRITEBACK_BASE			0x424C7000
-#define MSM_FB_BASE				0x427C4000
-#define MSM_PMEM_AUDIO_BASE			0x431AA000
+#define MSM_PMEM_TZCOM_BASE			0x43F00000
+#define MSM_FB_WRITEBACK_BASE			0x43FC7000
+#define MSM_FB_BASE				0x45DC4000
+#define MSM_PMEM_AUDIO_BASE			0x44CAA000
 #define MSM_SMI_BASE				0x38000000
 #define MSM_SMI_SIZE				0x4000000
 #define KERNEL_SMI_BASE			 	(MSM_SMI_BASE)
