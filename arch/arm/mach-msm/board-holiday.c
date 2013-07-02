@@ -7265,7 +7265,7 @@ static void __init holiday_init(void)
 }
 
 #define PHY_BASE_ADDR1  0x48000000
-#define SIZE_ADDR1	  0x35100000
+#define SIZE_ADDR1      0x26700000
 
 static void __init holiday_fixup(struct machine_desc *desc, struct tag *tags,
 				 char **cmdline, struct meminfo *mi)
